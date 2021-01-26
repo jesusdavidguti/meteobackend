@@ -10,7 +10,7 @@ exports.createAviso = (req, res) =>
         else     res.json(data);
     });
 
-exports.readAviso = (req, res) =>
+exports.readAvisos = (req, res) =>
     Aviso.find({}, (err, data) => {
         if (err) res.json({ error: err });
         else     res.json(data);
@@ -37,7 +37,7 @@ exports.createFenomeno = (req, res) =>
         else     res.json(data);
     });
 
-exports.readFenomeno = (req, res) =>
+exports.readFenomenos = (req, res) =>
     Fenomeno.find({}, (err, data) => {
         if (err) res.json({ error: err });
         else     res.json(data);
@@ -63,7 +63,7 @@ exports.createPrevision = (req, res) =>
         else     res.json(data);
     });
 
-exports.readPrevision = (req, res) =>
+exports.readPrevisiones = (req, res) =>
     Prevision.find({}, (err, data) => {
         if (err) res.json({ error: err });
         else     res.json(data);
