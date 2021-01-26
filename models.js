@@ -1,20 +1,31 @@
 const mongoose = require('mongoose');
 
-const Cliente = mongoose.model('Cliente',
+/* const Cliente = mongoose.model('Cliente',
   new mongoose.Schema({ nombre: String, apellidos: String })
 );
+ */
 
-const Articulo = mongoose.model('Articulo',
-  new mongoose.Schema({ nombre: String, precio: Number })
+const Aviso = mongoose.model('Aviso',
+  new mongoose.Schema({ tipo: String, descripcion: String, fecha: Date })
+);
+
+const Fenomeno = mongoose.model('Fenomeno',
+  new mongoose.Schema({ tipo: String, intensidad: Number, descripcion: String, fecha: Date })
+);
+
+const Prevision = mongoose.model('Prevision',
+  new mongoose.Schema({ descripcion: String, fecha: Date })
 );
 
 module.exports = {
-  Cliente: Cliente,
-  Articulo: Articulo
+  Aviso: Aviso,
+  Fenomeno: Fenomeno,
+  Prevision: Prevision
 }
 
 // Otra forma más corta:
 // module.exports = {
-//     Cliente,
-//     Articulo
+//     Aviso,
+//     Fenomeno,
+//     Prevision
 // }
