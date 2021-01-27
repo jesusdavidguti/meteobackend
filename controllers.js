@@ -20,6 +20,17 @@ exports.readAviso = (req, res) =>
     Aviso.findOne({ _id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else     res.json(data);
+    });
+
+exports.updateAviso = (req, res) =>
+    Aviso.findOneAndUpdate(
+    { _id: req.params.id },
+    { $set: { tipo: req.body.tipo, descripcion: req.body.descripcion, fecha: req.body.fecha } }, 
+    (err, data) => {
+        if (err) res.json({ error: err });
+        else     res.json(data);
+    }
+);
 
 exports.deleteAviso = (req, res) =>
     Aviso.findOneAndRemove({ _id: req.params.id }, (err, data) => {
@@ -30,7 +41,7 @@ exports.deleteAviso = (req, res) =>
 // ------- FENOMENO
 
 exports.createFenomeno = (req, res) =>
-    new Aviso({ tipo: req.body.tipo, intensidad: req.body.intensidad, 
+    new Fenomeno({ tipo: req.body.tipo, intensidad: req.body.intensidad, 
                 descripcion: req.body.descripcion, fecha: req.body.fecha })
     .save((err, data) => {
         if (err) res.json({ error: err });
@@ -47,7 +58,19 @@ exports.readFenomeno = (req, res) =>
     Fenomeno.findOne({ _id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else     res.json(data);
+    });
 
+exports.updateFenomeno = (req, res) =>
+    Fenomeno.findOneAndUpdate(
+    { _id: req.params.id },
+    { $set: { tipo: req.body.tipo, intensidad: req.body.intensidad, 
+        descripcion: req.body.descripcion, fecha: req.body.fecha } }, 
+    (err, data) => {
+        if (err) res.json({ error: err });
+        else     res.json(data);
+    }
+);
+        
 exports.deleteFenomeno = (req, res) =>
     Fenomeno.findOneAndRemove({ _id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
@@ -57,7 +80,7 @@ exports.deleteFenomeno = (req, res) =>
 // ------- PREVISION
 
 exports.createPrevision = (req, res) =>
-    new Aviso({ descripcion: req.body.descripcion, fecha: req.body.fecha })
+    new Prevision({ descripcion: req.body.descripcion, fecha: req.body.fecha })
     .save((err, data) => {
         if (err) res.json({ error: err });
         else     res.json(data);
@@ -73,96 +96,21 @@ exports.readPrevision = (req, res) =>
     Prevision.findOne({ _id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else     res.json(data);
+    });
 
+exports.updatePrevision = (req, res) =>
+    Prevision.findOneAndUpdate(
+        { _id: req.params.id },
+        { $set: { descripcion: req.body.descripcion, fecha: req.body.fecha } }, 
+        (err, data) => {
+            if (err) res.json({ error: err });
+            else     res.json(data);
+        }
+    );
+                
 exports.deletePrevision = (req, res) =>
     Prevision.findOneAndRemove({ _id: req.params.id }, (err, data) => {
         if (err) res.json({ error: err });
         else     res.json(data);
     });
     
-
-// ------- CLIENTES
-
-exports.readClientes = (req, res) =>
-    Cliente.find({}, (err, data) => {
-        if (err) res.json({ error: err });
-        else     res.json(data);
-    });
-
-
-exports.readCliente = (req, res) =>
-    Cliente.findOne({ _id: req.params.id }, (err, data) => {
-        if (err) res.json({ error: err });
-        else     res.json(data);
-    });
-
-
-exports.deleteCliente = (req, res) =>
-    Cliente.findOneAndRemove({ _id: req.params.id }, (err, data) => {
-        if (err) res.json({ error: err });
-        else     res.json(data);
-    });
-
-
-exports.updateCliente = (req, res) =>
-    Cliente.findOneAndUpdate(
-        { _id: req.params.id },
-        { $set: { nombre: req.body.nombre, apellidos: req.body.apellidos } }, 
-        (err, data) => {
-            if (err) res.json({ error: err });
-            else     res.json(data);
-        }
-    );
-
-
-exports.createCliente = (req, res) =>
-    new Cliente({ nombre: req.body.nombre, apellidos: req.body.apellidos })
-    .save((err, data) => {
-        if (err) res.json({ error: err });
-        else     res.json(data);
-    });
-
-
-
-// ------ ARTÍCULOS
-
-exports.readArticulos = (req, res) =>
-    Articulo.find({}, (err, data) => {
-        if (err) res.json({ error: err });
-        else     res.json(data);
-    });
-
-
-exports.readArticulo = (req, res) =>
-    Articulo.findOne({ _id: req.params.id }, (err, data) => {
-        if (err) res.json({ error: err });
-        else     res.json(data);
-    });
-
-
-exports.deleteArticulo = (req, res) =>
-    Articulo.findOneAndRemove({ _id: req.params.id }, (err, data) => {
-        if (err) res.json({ error: err });
-        else     res.json(data);
-    });
-
-
-
-exports.updateArticulo = (req, res) =>
-    Articulo.findOneAndUpdate(
-        { _id: req.params.id },
-        { $set: { nombre: req.body.nombre, precio: req.body.precio } }, 
-        (err, data) => {
-            if (err) res.json({ error: err });
-            else     res.json(data);
-        }
-    );
-
-
-exports.createArticulo = (req, res) =>
-    new Articulo({ nombre: req.body.nombre, precio: req.body.precio })
-    .save((err, data) => {
-        if (err) res.json({ error: err });
-        else     res.json(data);
-    });
-
