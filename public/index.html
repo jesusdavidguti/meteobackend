@@ -2,15 +2,15 @@
 <html lang="es">
 
 <head>
-    <title>Tienda Backend</title>
+    <title>Meteo Backend</title>
     <meta charset="UTF-8">
 
-    <meta name="description" content="Fullstack example">
+    <meta name="description" content="Fullstack meteobackend">
     <meta name="keywords" content="Backend, NodeJS, Express, MongoDB, JavaScript">
     <meta name="author" content="José Antonio Muñoz Jiménez">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/tormenta.png">
 
     <style>
         @import url("https://fonts.googleapis.com/css?family=Aclonica");
@@ -141,15 +141,15 @@
 
 <body>
     <div class="cabecera">
-        <img src="/favicon.png">
-        <h1>Tienda Backend</h1>
+        <img src="icono.png">
+        <h1>Meteo Backend</h1>
     </div>
-    <p><small>Frontend en <a href="https://tiendafrontend.now.sh/">https://tiendafrontend.now.sh</a></small></p>
+    <p><small>Frontend en <a href="#">En construcción</a></small></p>
 
     <p><b>API RESTful</b></p>
 
     <div class="bloque">
-        <h4>ARTÍCULOS</h4>
+        <h4>AVISOS</h4>
         <div class="resumen metodo get">
             <span class="metodo-verbo http-get">GET</span>
             <span class="metodo-ruta">/api/articulos</span>
@@ -178,7 +178,7 @@
     </div>
 
     <div class="bloque">
-        <h4>CLIENTES</h4>
+        <h4>FENOMENO</h4>
         <div class="resumen metodo get">
             <span class="metodo-verbo http-get">GET</span>
             <span class="metodo-ruta">/api/clientes</span>
@@ -205,10 +205,39 @@
             <span class="metodo-descripcion">Eliminar un cliente.</span>
         </div>
     </div>
+
+    <div class="bloque">
+        <h4>PREVISION</h4>
+        <div class="resumen metodo get">
+            <span class="metodo-verbo http-get">GET</span>
+            <span class="metodo-ruta">/api/articulos</span>
+            <span class="metodo-descripcion">Obtener todos los artículos.</span>
+        </div>
+        <div class="resumen metodo post">
+            <span class="metodo-verbo http-post">POST</span>
+            <span class="metodo-ruta">/api/articulos</span>
+            <span class="metodo-descripcion">Añadir un artículo.</span>
+        </div>
+        <div class="resumen metodo get">
+            <span class="metodo-verbo http-get">GET</span>
+            <span class="metodo-ruta">/api/articulos/{id}</span>
+            <span class="metodo-descripcion">Obtener un artículo.</span>
+        </div>
+        <div class="resumen metodo update">
+            <span class="metodo-verbo http-update">UPDATE</span>
+            <span class="metodo-ruta">/api/articulos/{id}</span>
+            <span class="metodo-descripcion">Modificar un artículo.</span>
+        </div>
+        <div class="resumen metodo delete">
+            <span class="metodo-verbo http-delete">DELETE</span>
+            <span class="metodo-ruta">/api/articulos/{id}</span>
+            <span class="metodo-descripcion">Eliminar un artículo.</span>
+        </div>
+    </div>    
     <p>
         <small>
             <b>Código fuente en
-                <a href="https://github.com/jamj2000/tiendabackend">https://github.com/jamj2000/tiendabackend</a>
+                <a href="https://github.com/jesusdavidguti/meteobackend">https://github.com/jesusdavidguti/meteobackend</a>
             </b>
         </small>
     </p>
