@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 const Aviso = mongoose.model('Aviso',
   new mongoose.Schema({ tipo: String, descripcion: String, fecha: Date })
-);
+);   
 
 const Fenomeno = mongoose.model('Fenomeno',
   new mongoose.Schema({ tipo: String, intensidad: Number, descripcion: String, fecha: Date })
